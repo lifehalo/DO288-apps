@@ -7,8 +7,11 @@ The deploy.yaml is combination of all the yaml files needed to deploy the famous
 5) login ocp
 6) oc new-project famouschart (if the project is different name, you need to change all the namespace in deploy.yaml)
 7) oc create -f deploy.yaml
-8) oc expose svc famousapp-famouschart
+8) oc expose svc famousapp-famouschart -n famouschart
 9) oc get route famousapp-famouschart (copy url)
 10) open browser and enter http://famousapp-famouschart-famouschart.apps.ocp4.example.com/random
 11) take note the /random at the back of url
-12) every refresh will display a random qoute
+12) every refresh will display a random quote
+13) to remove type: oc delete -f deploy.yaml
+14) and: oc delete route famousapp-famouschart -n famouschart
+
